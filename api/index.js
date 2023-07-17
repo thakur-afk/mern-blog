@@ -26,10 +26,7 @@ app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
 
 try {
-  mongoose.connect(
-    process.env.MONGODB_URL
-    //"mongodb+srv://harshitthakur:YVrIEcdHcbCCF1pE@cluster0.pjgjfqu.mongodb.net/?retryWrites=true&w=majority"
-  );
+  mongoose.connect(process.env.MONGODB_URL);
 
   console.log("database is connected");
 } catch (error) {
@@ -165,4 +162,3 @@ app.put("/post", uploadMiddleware.single("file"), async (req, res) => {
 });
 
 app.listen(4000);
-//YVrIEcdHcbCCF1pE
