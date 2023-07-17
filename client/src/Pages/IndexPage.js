@@ -10,7 +10,7 @@ const IndexPage = () => {
       });
     });
   });
-  return <>{posts.length > 0 && posts.map((post) => <Post />)}</>;
+  return <>{posts.length > 0 && posts.map((post) => <Post {...post} />)}</>;
 };
 
 export default IndexPage;
